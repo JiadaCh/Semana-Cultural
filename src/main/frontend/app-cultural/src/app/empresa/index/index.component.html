@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-6">
+      <h4>Lista de Empresas</h4>
+    </div>
+    <div class="col-md-6">
+      <a class="btn btn-success float-md-end" routerLink="/empresa/create" style="margin-left: 2px; margin-top: 2px;">Insertar
+        Nueva Empresa</a>
+    </div>
+  </div>
+  <br>
+  <div class="row top-5 ">
+    <div class="col-md-1 border-bottom "><h5>Id</h5></div>
+    <div class="col-md-1 border-bottom "><h5>Nombre</h5></div>
+    <div class="col-md-1 border-bottom "><h5>Año</h5></div>
+    <div class="col-md-2 border-bottom "><h5>Dirección</h5></div>
+    <div class="col-md-2 border-bottom "><h5>Descripción</h5></div>
+    <div class="col-md-1 border-bottom "><h5>Logo</h5></div>
+    <div class="col-md-2 border-bottom "><h5>Actualización</h5></div>
+    <div class="col-md-2 border-bottom  d-md-flex justify-content-md-center"><h5>Acción</h5></div>
+  </div>
+  <div *ngFor="let empresa of empresas" class="row top5 align-items-center mt-2">
+    <div class="col-md-1"> {{ empresa.id }}</div>
+    <a class="col-md-1 text-primary text-decoration-none" href="{{ empresa.web }}">{{ empresa.nombre }}</a>
+    <div class="col-md-1"> {{ empresa.anoFundacion }}</div>
+    <div class="col-md-2">{{ getText(empresa.direccion) }}</div>
+    <div class="col-md-2">{{ getText(empresa.descripcion) }}</div>
+    <a class="col-md-1 "><img alt="logo" src="{{empresa.imagen}}" width="70px"></a>
+    <div class="col-md-2">{{ transform(empresa.ultimaActualizacion) }}</div>
+
+    <div class="col-md-2 d-md-flex justify-content-md-center">
+      <button [routerLink]="['/empresa/', 'edit', empresa.id  ]" class="btn btn-secondary" style="margin-left: 2px; margin-top: 2px;"
+              type="button">Editar
+      </button>
+      <button (click)="deleteCategoria(empresa.id)" class="btn btn-danger" style="margin-left: 2px; margin-top: 2px;"
+              type="button">Eliminar
+      </button>
+
+    </div>
+  </div>
+</div>
