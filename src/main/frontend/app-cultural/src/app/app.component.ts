@@ -13,7 +13,7 @@ import {forkJoin} from "rxjs";
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-
+  title: string = "Home";
 
   constructor(private empresaService: EmpresaService) {
   }
@@ -40,9 +40,6 @@ export class AppComponent implements OnInit {
             console.log('No se necesitan crear empresas automáticamente.');
           }
         }
-      },
-      error => {
-        console.log('No se ha podido crear empresas .');
       }
     );
   }

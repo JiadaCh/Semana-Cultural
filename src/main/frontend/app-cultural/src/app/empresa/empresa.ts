@@ -30,5 +30,23 @@ export const empresasLoad = [
     direccion: "Parque Tecnológico de Andalucía - Edificio I+D6, Severo Ochoa 21, Edificio I+D 6, 29590, Campanillas (Malaga)",
     anoFundacion: 1989,
     ultimaActualizacion: "08-03-202-13:45:20"
+  }, {
+    id: 3,
+    nombre: 'Oracle',
+    descripcion: "Oracle Corporation es una compañía especializada en el desarrollo de soluciones de nube y locales.",
+    imagen: '../assets/imagen/Oracle.png',
+    web: "https://www.oracle.com",
+    direccion: "Calle Severo Ochoa 55, 29590, Málaga",
+    anoFundacion: 1977,
+    ultimaActualizacion: "08-03-202-13:45:20"
+  }, {
+    id: 4,
+    nombre: 'IBM',
+    descripcion: "",
+    imagen: '../assets/imagen/IBM.png',
+    web: "https://www.ibm.com/es-es",
+    direccion: "CALLE DON CRISTIAN 2, 29007, Málaga",
+    anoFundacion: 1989,
+    ultimaActualizacion: "08-03-202-13:45:20"
   },
 ];

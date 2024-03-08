@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
     web: new FormControl('', [Validators.required]),
     imagen: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', Validators.maxLength(245)),
-    anoFundacion: new FormControl('', Validators.max(new Date().getFullYear())),
+    anoFundacion: new FormControl('', [Validators.max(new Date().getFullYear())]),
     ultimaActualizacion: new FormControl(this.getDate(), [Validators.required]),
   });
 
