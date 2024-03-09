@@ -34,6 +34,28 @@
         </div>
       </div>
       <div class="col-md-6 ">
+        <label for="latitud">Latitud:</label>
+        <input
+          class="form-control"
+          formControlName="latitud"
+          id="latitud"
+          type="text">
+        <div *ngIf="f['latitud'].touched && f['latitud'].invalid" class="alert alert-danger">
+          <div *ngIf="f['latitud'].errors?.['required']">*Latitud es requerido.</div>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <label for="longitud">Longitud:</label>
+        <input
+          class="form-control"
+          formControlName="longitud"
+          id="longitud"
+          type="text">
+        <div *ngIf="f['longitud'].touched && f['longitud'].invalid" class="alert alert-danger">
+          <div *ngIf="f['longitud'].errors?.['required']">*Direccion es requerido.</div>
+        </div>
+      </div>
+      <div class="col-md-6 ">
         <label for="web">URL de su sitio Web:</label>
         <input
           class="form-control"

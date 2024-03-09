@@ -25,6 +25,8 @@ export class CreateComponent implements OnInit {
     descripcion: new FormControl('', Validators.maxLength(245)),
     anoFundacion: new FormControl('', [Validators.max(new Date().getFullYear())]),
     ultimaActualizacion: new FormControl(this.getDate(), [Validators.required]),
+    latitud: new FormControl('',[Validators.required]),
+    longitud: new FormControl('',[Validators.required])
   });
 
   constructor(

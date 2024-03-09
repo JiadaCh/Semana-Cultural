@@ -37,6 +37,10 @@ public class Empresa {
     private String imagen;
 
     private int anoFundacion;
+    @Column(nullable = false)
+    private String latitud;
+    @Column(nullable = false)
+    private String longitud;
 
     @Column(name = "ultima_actualizacion")
     @JsonFormat(pattern = "dd-MM-yyyy-HH:mm:ss", shape = JsonFormat.Shape.STRING)

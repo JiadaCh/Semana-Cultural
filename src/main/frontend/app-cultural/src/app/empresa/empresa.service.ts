@@ -21,6 +21,7 @@ export class EmpresaService {
   }
 
   getAll(): Observable<Empresa[]> {
+
     return this.httpClient.get<Empresa[]>(this.apiURL)
       .pipe(
         catchError(this.errorHandler)

@@ -25,7 +25,9 @@ export class EditComponent implements OnInit {
     nombre: "",
     ultimaActualizacion: "",
     web: "",
-    anoFundacion: new Date().getFullYear()
+    anoFundacion: new Date().getFullYear(),
+    longitud: 0,
+    latitud: 0
   };
   form: FormGroup = new FormGroup({
     id: new FormControl(""),
@@ -36,6 +38,8 @@ export class EditComponent implements OnInit {
     descripcion: new FormControl('', Validators.maxLength(245)),
     anoFundacion: new FormControl('', Validators.max(new Date().getFullYear())),
     ultimaActualizacion: new FormControl(this.getDate(), [Validators.required]),
+    latitud: new FormControl('',[Validators.required]),
+    longitud: new FormControl('',[Validators.required])
   });
 
   constructor(
@@ -61,6 +65,8 @@ export class EditComponent implements OnInit {
       this.form.get('web')?.setValue(this.empresa.web);
       this.form.get('anoFundacion')?.setValue(this.empresa.anoFundacion);
 
+      this.form.get('latitud')?.setValue(this.empresa.latitud);
+      this.form.get('longitud')?.setValue(this.empresa.longitud);
     });
   }
 
