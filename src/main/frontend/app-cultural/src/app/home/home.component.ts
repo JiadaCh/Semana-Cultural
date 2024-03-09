@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit,AfterViewInit{
         for (let empresa of this.empresas){
           L.marker([empresa.latitud,empresa.longitud]).addTo(this.map).bindPopup(
             '<a href="'+empresa.web+'" >' +
-            '<div><img src="'+empresa.imagen+'" width="250px"></div>' +
+            '<div><img src="'+empresa.imagen+'" width="250px" alt="logo"></div>' +
             '<h2 >'+empresa.nombre+'('+empresa.anoFundacion+')</h2>' +
             '</a> ' +
             '<details open><summary>Descripcion</summary> ' +
