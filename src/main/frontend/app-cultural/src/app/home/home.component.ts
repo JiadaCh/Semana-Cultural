@@ -1,8 +1,8 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit, OnDestroy} from '@angular/core';
 import { GeolocationService } from "../geolocation.service";
 import {Empresa} from "../empresa/empresa";
 import {EmpresaService} from "../empresa/empresa.service";
-
+import L from "leaflet";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import {EmpresaService} from "../empresa/empresa.service";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit,AfterViewInit{
+export class HomeComponent implements OnInit,AfterViewInit, OnDestroy{
   map: any;
   empresas:Empresa[] = [];
   constructor(
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit,AfterViewInit{
   }
   setGeoLocation(): void {
 
-      import('leaflet').then((L) => {
+
         let userLocation = this.placeService.userLocation;
 
         this.map = new L.Map('map').setView(userLocation && userLocation[0] !== 0 && userLocation[1] !== 0?userLocation:[36.74,-4.5], 12);
@@ -65,8 +65,11 @@ export class HomeComponent implements OnInit,AfterViewInit{
             '</details>');
         }
 
-      });
 
+
+  }
+
+  ngOnDestroy(): void {
   }
 
 
